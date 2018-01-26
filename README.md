@@ -22,7 +22,7 @@ function Drums () {}
 
 Drums.prototype.play = function () {
   console.log('BOUM');
-};
+}
 
 const drumInstance = new Drums();
 drumInstance.play(); // BOUM
@@ -107,7 +107,7 @@ function createDrum() {
     }
   };
   return Object.create(prototypeLike);
-};
+}
 
 const drumInstance = createDrum();
 drumInstance.play(); // BOUM
@@ -165,7 +165,7 @@ function createDrum() {
       console.log(sound);
     }
   };
-};
+}
 
 const drumInstance = createDrum();
 drumInstance.play(); // BOUM
@@ -224,7 +224,7 @@ function createSmallDrum() {
       console.log('little boum')
     }
   }));
-};
+}
 
 const smallDrumInstance = createSmallDrum();
 smallDrumInstance.play(); // little boum
@@ -266,7 +266,7 @@ function createSmallDrum() {
   return Object.assign(createDrum.call(this), {
     sound: 'little boum'
   });
-};
+}
 
 const smallDrumInstance = createSmallDrum();
 smallDrumInstance.play(); // little boum
