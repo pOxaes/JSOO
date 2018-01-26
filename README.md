@@ -78,11 +78,11 @@ var drumInstance = new Drums();
 
 ```
 function createDrum() {
-	return {
-		play() {
-			console.log('BOUM');
-		}
-	}
+  return {
+    play() {
+      console.log('BOUM');
+    }
+  }
 }
 const drumInstance = createDrum();
 drumInstance.play(); // BOUM
@@ -101,7 +101,7 @@ console.log(drumInstance) // { play: ƒ }
 
 ```
 function createDrum() {
-	const prototypeLike = {
+  const prototypeLike = {
     play () {
       console.log('BOUM');
     }
@@ -148,7 +148,6 @@ const _name = Symbol('name');
 class Test {
   constructor(name) {
     this[_name] = name;
-
   }
 
   get name() { return this[_name]; }
@@ -159,9 +158,9 @@ _...factory..._
 
 ```
 function createDrum() {
-	const sound = 'BOUM'; // private variable
+  const sound = 'BOUM'; // private variable
 
-	return {
+  return {
     play () {
       console.log(sound);
     }
@@ -209,22 +208,22 @@ Child.prototype.constructor = Child;
 
 ```
 function createDrum() {
-	return Object.create({
-		whoAreYou() {
-			console.log('A Drum!');
-		},
-		play () {
-			console.log('BOUM');
-		}
-	})
+  return Object.create({
+    whoAreYou() {
+      console.log('A Drum!');
+    },
+    play () {
+      console.log('BOUM');
+    }
+  })
 }
 
 function createSmallDrum() {
   return Object.create(Object.assign(createDrum.call(this), {
-		play() {
-			console.log('little boum')
-		}
-	}));
+    play() {
+      console.log('little boum')
+    }
+  }));
 };
 
 const smallDrumInstance = createSmallDrum();
@@ -235,13 +234,13 @@ smallDrumInstance.whoAreYou(); // A Drum!
 > Note: if you want to use Object spread, createSmallDrum becomes:
 
 ```
-  const drum = createDrum.call(this);
-  return Object.create({
-    ...drum.__proto__,
-		play() {
-			console.log('little boum')
-		}
-	});
+const drum = createDrum.call(this);
+return Object.create({
+  ...drum.__proto__,
+  play() {
+    console.log('little boum')
+  }
+});
 ```
 
 > `__proto__` property of an object is a pointer to the object's constructor function's prototype property
@@ -252,21 +251,21 @@ smallDrumInstance.whoAreYou(); // A Drum!
 
 ```
 function createDrum() {
-	return {
-		sound: 'BOUM',
-		whoAreYou() {
-			console.log('A Drum!');
-		},
-		play() {
-			console.log(this.sound);
-		}
-	}
+  return {
+    sound: 'BOUM',
+    whoAreYou() {
+      console.log('A Drum!');
+    },
+    play() {
+      console.log(this.sound);
+    }
+  }
 }
 
 function createSmallDrum() {
   return Object.assign(createDrum.call(this), {
-		sound: 'little boum'
-	});
+    sound: 'little boum'
+  });
 };
 
 const smallDrumInstance = createSmallDrum();
@@ -284,29 +283,29 @@ smallDrumInstance.whoAreYou(); // A Drum!
 
 ```
 const createHuman() {
-	return {
-		canWalk: true,
-		canTalk: true,
-		canSee: false,
-		canSleepWithoutPeeing: true
-	}
+  return {
+    canWalk: true,
+    canTalk: true,
+    canSee: false,
+    canSleepWithoutPeeing: true
+  }
 }
 
 const createBaby() {
-	return {
-		canSleepWithoutPeeing: false
-	}
+  return {
+    canSleepWithoutPeeing: false
+  }
 }
 
 const createAlien() {
-	return {
-		canFly: true,
-		canTalk: false
-	}
+  return {
+    canFly: true,
+    canTalk: false
+  }
 }
 
 const createSuperMixedEntity() {
-	return Object.assign(createHuman(), createBaby(), createAlien())
+  return Object.assign(createHuman(), createBaby(), createAlien())
 }
 ```
 
