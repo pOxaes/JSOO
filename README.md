@@ -140,6 +140,21 @@ const drumInstance = new Drums();
 drumInstance.play(); // BOUM
 ```
 
+using Symbol
+
+```
+const _name = Symbol('name');
+
+class Test {
+  constructor(name) {
+    this[_name] = name;
+
+  }
+
+  get name() { return this[_name]; }
+}
+```
+
 _...factory..._
 
 ```
@@ -263,8 +278,9 @@ smallDrumInstance.whoAreYou(); // A Drum!
 
 ### More...
 
-* possible to mix custom properties + prototype
-* possible to compose multiple objects: more flexible
+* return an object of any subtype of their return type: the object to be returned could be of several different types depending on some parameter
+* mix custom properties + prototype
+* compose multiple objects: more flexible
 
 ```
 const createHuman() {
