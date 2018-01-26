@@ -140,7 +140,7 @@ const drumInstance = new Drums();
 drumInstance.play(); // BOUM
 ```
 
-using Symbol
+using [Symbol](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol)
 
 ```
 const _name = Symbol('name');
