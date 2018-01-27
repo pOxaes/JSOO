@@ -1,4 +1,4 @@
-# POO in JS
+# OOP in JS
 
 # What
 
